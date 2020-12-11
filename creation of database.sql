@@ -3,9 +3,9 @@ use private_school;
 
 CREATE TABLE students(
 stud_id int not null auto_increment,
-first_name varchar(30) not null,
-last_name varchar(30) not null,
-date_of_birth date not null,
+first_name varchar(30),
+last_name varchar(30),
+date_of_birth date,
 tuition_fees decimal(7,2) null,
 primary key (stud_id)
 );
@@ -13,20 +13,20 @@ primary key (stud_id)
 
 create table courses(
 course_id int not null auto_increment,
-title varchar(400) not null,
-stream varchar(120) not null,
-type varchar(100) not null,
-start_date date not null,
-end_date date not null,
+title varchar(400),
+stream varchar(120),
+type varchar(100),
+start_date date,
+end_date date,
 primary key(course_id)
 );
 
 
 create table assignments(
 assignment_id int not null auto_increment,
-title varchar(300) not null,
-description text not null,
-sub_date_time datetime not null,
+title varchar(300),
+description text,
+sub_date_time datetime,
 oral_mark decimal (5,2) not null default 0.0,
 total_mark decimal (5,2) not null default 0.0,
 primary key (assignment_id),
@@ -40,8 +40,8 @@ alter table courses
 
 create table trainers(
 trainer_id int not null auto_increment,
-first_name varchar(30) not null,
-last_name varchar(30) not null,
+first_name varchar(30),
+last_name varchar(30),
 subject varchar (400),
 primary key (trainer_id)
 );
@@ -70,7 +70,7 @@ foreign key (course_id) references courses (course_id)
 
 
 alter table assignments 
-add column course_id int not null,
+add column course_id int,
 add foreign key (course_id) references courses (course_id);
 
 
@@ -110,10 +110,6 @@ foreign key (course_id) references courses (course_id),
 foreign key (assignment_id) references assignments (assignment_id)
 );
 
-alter table course_assignment
-add column assi_sub_date_time datetime not null;
-
-
 insert into assignments (title, description)
 values ('Private School','Create a database for a private scool.'),
 	   ('Eshop', 'Create an interface for an eshop.'),
@@ -125,33 +121,33 @@ alter table course_assignment
 add column assi_sub_date_time datetime default null;
 
 insert into course_assignment (course_id,assignment_id)
-values (5,1),
-	   (5,2),
-       (5,3),
-       (5,4),
-       (6,1),
-       (6,2),
-       (6,3),
-       (6,5),
-       (7,1),
-       (7,4),
-       (8,1),
-       (8,5);
+values (1,1),
+	   (1,2),
+       (1,3),
+       (1,4),
+       (2,1),
+       (2,2),
+       (2,3),
+       (2,5),
+       (3,1),
+       (3,4),
+       (4,1),
+       (4,5);
 
 
 insert into student_course (stud_id,course_id)
-values (1,5),
-	   (2,6),
-       (3,7),
-       (4,8),
-       (5,5);
+values (1,1),
+	   (2,2),
+       (3,3),
+       (4,4),
+       (5,1);
 
 insert into trainer_course (course_id,trainer_id)
-values (5,4),
-	     (5,5),
-       (6,1),
-       (7,3),
-       (8,2);
+values (1,4),
+		(1,5),
+       (2,1),
+       (3,3),
+       (4,2);
 
 alter table students
 drop column tuition_fees;
@@ -173,16 +169,16 @@ create table student_assignment(
 );
 
 insert into student_assignment (stud_id,assignment_id,course_id)
-	values (1,3,5),
-		   (1,4,5),
-           (5,1,5),
-           (5,2,5),
-           (2,2,6),
-           (2,3,6),
-           (3,1,7),
-           (3,4,7),
-           (4,1,8),
-           (4,5,8);
+	values (1,3,1),
+		   (1,4,1),
+           (5,1,1),
+           (5,2,1),
+           (2,2,2),
+           (2,3,2),
+           (3,1,3),
+           (3,4,3),
+           (4,1,4),
+           (4,5,4);
 
 rename table student_assignment to course_student_assignment;
 
@@ -215,7 +211,7 @@ UPDATE COURSE_STUDENT_ASSIGNMENT SET GRADE = NULL WHERE SA_ID = 9;
 UPDATE COURSE_STUDENT_ASSIGNMENT SET GRADE = NULL WHERE SA_ID = 10;
 
 ALTER TABLE COURSE_STUDENT_ASSIGNMENT 
-CHANGE COLUMN cSA_ID csa_id INT NOT NULL AUTO_INCREMENT ;
+CHANGE COLUMN SA_ID csa_id INT NOT NULL AUTO_INCREMENT ;
 
 UPDATE COURSE_ASSIGNMENT SET ASSI_SUB_DATE_TIME = '2020-07-05 16:00' WHERE CA_ID=1;
 UPDATE COURSE_ASSIGNMENT SET ASSI_SUB_DATE_TIME = '2020-09-05 16:00' WHERE CA_ID=2;
@@ -237,5 +233,5 @@ UPDATE STUDENT_COURSE SET TUITION_FEES = 1500 WHERE SC_ID=4;
 UPDATE STUDENT_COURSE SET TUITION_FEES = 1500 WHERE SC_ID=5;
 
 INSERT INTO STUDENT_COURSE (STUD_ID,COURSE_ID,TUITION_FEES)
-VALUES(3,8,1500),
-	  (4,7,1500)
+VALUES(3,4,1500),
+	  (4,3,1500)
