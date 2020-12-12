@@ -90,12 +90,42 @@ After the association is completed, user is asked to add tuition fees of student
 
 <img src="screenshots/tuition-fees.PNG" />
 
-If everything is valid the insertion is done.
+If everything is valid the insertion is done and user is asked if he/she wants to associate this student with another course.
 
 <img src="screenshots/student-course-completion.PNG" />
 
-If not, the validation error is being displayed and the user is asked if he/she wants to associate this student with another course.
+If not, the validation error is being displayed and user is asked if he/she wants to associate this student with another course.
 
 <img src="screenshots/student-course-validation.PNG" />
 
-##### Option 6: Connect trainer to co
+##### Option 6: Connect trainer to courses. ,
+##### Option 7: Connect assignment to courses.
+
+The procedure is the same for these options as above. User is asked to pick from 2 lists to make the association, with the only exceptions being that trainer-course has no extra step and assignment-course connection asks user for assignment's submission date.
+
+<img src="screenshots/assignment-submission-date.PNG" />
+
+##### Option 8: Connect student to course's assignments.
+
+In this option after user has picked a student and a course he has enrolled to, is asked if he/she wants to add all of course's assignments to this student.
+
+<img src="screenshots/add-student-to-all-assignments.PNG" />
+
+If not, he/she is given the course's assignments to pick from.
+
+##### Option 9: Insert grade to a student's assignment.
+
+User is capable of providing a grade for a student's assignment after picking a student, a course that student has enrolled to and an assignmet he has been given from the course.
+
+<img src="screenshots/pick-student-for-grade.PNG" />
+<img src="screenshots/pick-course-for-grade.PNG" />
+<img src="screenshots/pick-assignment-for-grade.PNG" />
+<img src="screenshots/grade.PNG" />
+
+##### Option 10: Back to main menu.
+
+User is redirects to main menu.
+
+#### Selecting data presentation
+
+
