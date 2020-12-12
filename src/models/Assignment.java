@@ -173,6 +173,7 @@ public class Assignment {
 
     public static int pickFromCoursesAssignments(int courseId) {
         HashMap<Integer, Assignment> pickAssignment = show(courseId, "course");
+        System.out.print("\nType the number of the assignment you would like to pick: ");
         int usersChoiceValidation = validInt(pickAssignment);
         int usersChoice = pickAssignment.get(usersChoiceValidation).assignmentId;
         return usersChoice;

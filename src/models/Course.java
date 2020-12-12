@@ -225,6 +225,7 @@ public class Course {
 
     public static int pickFromStudentsCourses(int studId) {
         HashMap<Integer, Course> pickCourse = show(studId, "stud");
+        System.out.print("\nType the number of the course you would like to pick: ");
         int usersChoiceValidation = validInt(pickCourse);
         int usersChoice = pickCourse.get(usersChoiceValidation).courseId;
         return usersChoice;

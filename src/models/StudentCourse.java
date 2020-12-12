@@ -232,13 +232,14 @@ public class StudentCourse {
         try {
             Class.forName(getMYSQL_JDBC_DRIVER());
             connection = DriverManager.getConnection(getDB_URL(), getUSERNAME(), getPASSWORD());
-            query = "SELECT C.TITLE,C.STREAM,C.TYPE,C.START_DATE,C.END_DATE FROM COURSES C  JOIN STUDENT_COURSE SC ON C.COURSE_ID=SC.COURSE_ID WHERE SC.STUD_ID = ? ";
+            query = "SELECT C.COURSE_ID,C.TITLE,C.STREAM,C.TYPE,C.START_DATE,C.END_DATE FROM COURSES C  JOIN STUDENT_COURSE SC ON C.COURSE_ID=SC.COURSE_ID WHERE SC.STUD_ID = ? ";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, studId);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 Course studentsCourse = new Course();
+                studentsCourse.setCourseId(resultSet.getInt("C.COURSE_ID"));
                 studentsCourse.setTitle(resultSet.getString("C.TITLE"));
                 studentsCourse.setStream(resultSet.getString("C.STREAM"));
                 studentsCourse.setType(resultSet.getString("C.TYPE"));

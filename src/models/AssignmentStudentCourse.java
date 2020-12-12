@@ -383,10 +383,7 @@ public class AssignmentStudentCourse {
         try {
             Class.forName(getMYSQL_JDBC_DRIVER());
             connection = DriverManager.getConnection(getDB_URL(), getUSERNAME(), getPASSWORD());
-            query = "SELECT C.TITLE,C.STREAM,C.TYPE,S.FIRST_NAME,S.LAST_NAME,A.ASSIGNMENT_ID,A.TITLE,A.DESCRIPTION,A.ORAL_MARK,A.TOTAL_MARK,CSA.GRADE, CA.ASSI_SUB_DATE_TIME "
-                    + "FROM COURSE_STUDENT_ASSIGNMENT CSA JOIN STUDENTS S ON S.STUD_ID=CSA.STUD_ID JOIN COURSES C ON C.COURSE_ID=CSA.COURSE_ID "
-                    + "JOIN ASSIGNMENTS A ON CSA.ASSIGNMENT_ID=A.ASSIGNMENT_ID JOIN COURSE_ASSIGNMENT CA ON CA.COURSE_ID=C.COURSE_ID AND CA.ASSIGNMENT_ID=A.ASSIGNMENT_ID"
-                    + "WHERE CSA.COURSE_ID= ? AND CSA.STUD_ID= ?";
+            query = "SELECT C.TITLE,C.STREAM,C.TYPE,S.FIRST_NAME,S.LAST_NAME,A.ASSIGNMENT_ID,A.TITLE,A.DESCRIPTION,A.ORAL_MARK,A.TOTAL_MARK,CSA.GRADE, CA.ASSI_SUB_DATE_TIME FROM COURSE_STUDENT_ASSIGNMENT CSA JOIN STUDENTS S ON S.STUD_ID=CSA.STUD_ID JOIN COURSES C ON C.COURSE_ID=CSA.COURSE_ID JOIN ASSIGNMENTS A ON CSA.ASSIGNMENT_ID=A.ASSIGNMENT_ID JOIN COURSE_ASSIGNMENT CA ON CA.COURSE_ID=C.COURSE_ID AND CA.ASSIGNMENT_ID=A.ASSIGNMENT_ID WHERE CSA.COURSE_ID = ? AND CSA.STUD_ID = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, coursePick);
             preparedStatement.setInt(2, studentPick);
@@ -410,6 +407,7 @@ public class AssignmentStudentCourse {
             }
 
         } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
             System.out.print("\nSomething went wrong!");
         } finally {
             if (resultSet != null) {
