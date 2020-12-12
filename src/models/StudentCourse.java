@@ -179,7 +179,7 @@ public class StudentCourse {
                 connection = DriverManager.getConnection(getDB_URL(), getUSERNAME(), getPASSWORD());
                 System.out.print("Tuition fees: ");
                 double tuitionFees = validDouble();
-                query = "INSERT INTO STUDENT_COURSE (STUD_ID,TRAINER_ID,TUITION_FEES) VALUES (?,?,?)";
+                query = "INSERT INTO STUDENT_COURSE (STUD_ID,COURSE_ID,TUITION_FEES) VALUES (?,?,?)";
                 preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setInt(1, studentPick);
                 preparedStatement.setInt(2, coursePick);
