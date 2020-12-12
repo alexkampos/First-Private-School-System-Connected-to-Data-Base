@@ -171,5 +171,5 @@ User redirects to main menu.
 ## Technology & Tools
 
 <a href="https://www.java.com/en/download/">Java 8</a> <br>
-<a href="https://netbeans.org/">Apache NetBeans IDE</a>
+<a href="https://netbeans.org/">Apache NetBeans IDE</a> <br>
 <a href="https://www.mysql.com/">MySQL</a>
