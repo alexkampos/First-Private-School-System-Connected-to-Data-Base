@@ -124,8 +124,52 @@ User is capable of providing a grade for a student's assignment after picking a 
 
 ##### Option 10: Back to main menu.
 
-User is redirects to main menu.
+User redirects to main menu.
 
 #### Selecting data presentation
 
+##### Option 1: Students.
 
+<img src="screenshots/students-list.PNG" />
+
+##### Option 2: Trainers.
+
+<img src="screenshots/trainers-list.PNG" />
+
+##### Option 3: Courses.
+
+<img src="screenshots/courses-list.PNG" />
+
+##### Option 4: Assignments.
+
+<img src="screenshots/assignments-list.PNG" />
+
+##### Option 5: Students per course.
+
+<img src="screenshots/students-per-course.PNG" />
+
+##### Option 6: Trainers per course.
+
+<img src="screenshots/trainers-per-course.PNG" />
+
+##### Option 7: Assignments per course.
+
+<img src="screenshots/assignments-per-course.PNG" />
+
+##### Option 8: Assignments per student per course.
+
+<img src="screenshots/assignments-per-student-per-course.PNG" />
+
+##### Option 9: Students enrolled to more than one courses.
+
+<img src="screenshots/students-on-more-than-one-courses-list.PNG" />
+
+##### Option 10: Back to main menu.
+
+User redirects to main menu.
+
+## Technology & Tools
+
+<a href="https://www.java.com/en/download/">Java 8</a> <br>
+<a href="https://netbeans.org/">Apache NetBeans IDE</a>
+<a href="https://www.mysql.com/">MySQL</a>
