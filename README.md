@@ -80,11 +80,11 @@ The procedure is the same for these options as above. User is asked to provide s
 
 Picking option no.5, user must choose first from a list of students
 
-<img src="connect-student-to-course-students-list" />
+<img src="screenshots/connect-student-to-course-students-list" />
 
 and then from a list of courses, to insert the association between them to database.
 
-<img src="connect-student-to-course-courses-list" />
+<img src="screenshots/connect-student-to-course-courses-list" />
 
 After the association is completed, user is asked to add tuition fees of student's enrollment to course.
 
