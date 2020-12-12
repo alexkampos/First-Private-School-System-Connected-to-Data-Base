@@ -54,8 +54,10 @@ Syntetic data are kept in database in case user doesn't want to provide any.
 
 Starting the application, user will be asked if he/she wants to add/associate data to/from database or proceed to presentation with only the syntetic data.
 
+<img src="main-menu.PNG" />
+
 #### Choosing to insert/associate data
 
 User will see a menu with all data insertions or data associations possible to choose from.
 
-
+<img src="" />
