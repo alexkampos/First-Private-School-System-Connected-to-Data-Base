@@ -223,10 +223,11 @@ public class Student {
                 stud.firstName = resultSet.getString("FIRST_NAME");
                 stud.lastName = resultSet.getString("LAST_NAME");
                 stud.dateOfBirth = resultSet.getObject("DATE_OF_BIRTH", LocalDate.class);
-                stud.numberOfCourses = resultSet.getInt("COUNT(SC.STUD_ID)");
+                stud.numberOfCourses = resultSet.getInt("COURSES");
                 moreThanOneCourseStudsList.add(stud);
             }
         } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
             System.out.print("\nSomething went wrong!");
         } finally {
             if (resultSet != null) {
