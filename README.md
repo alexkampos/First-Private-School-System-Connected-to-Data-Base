@@ -52,6 +52,8 @@ Syntetic data are kept in database in case user doesn't want to provide any.
 
 ## Demonstration
 
+***First of all you need to provide a database username and password on <ins>src/models/DatabaseConnection.java</ins> file, on variables 'USERNAME' and 'PASSWORD'***
+
 Starting the application, user will be asked if he/she wants to add/associate data to/from database or proceed to presentation with only the syntetic data.
 
 <img src="screenshots/main-menu.PNG" />
@@ -173,3 +175,4 @@ User redirects to main menu.
 <a href="https://www.java.com/en/download/">Java 8</a> <br>
 <a href="https://netbeans.org/">Apache NetBeans IDE</a> <br>
 <a href="https://www.mysql.com/">MySQL</a>
+<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/">Java JDBC API</a>
